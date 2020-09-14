@@ -68,13 +68,3 @@ ax.title.set_text('Hardest Hit COVID-19 Countries Worldwide')
 
 plt.legend(loc='upper left')
 plt.show()
-
-
-
-
-
-# In[ ]:
-
-
-
-
