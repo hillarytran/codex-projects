@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[83]:
-
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
@@ -15,10 +12,6 @@ df = pd.read_csv('https://raw.githubusercontent.com/datasets/covid-19/master/dat
 df['Total Cases'] = df[['Confirmed', 'Recovered', 'Deaths']].sum(axis=1)
 df.head()
 
-
-# In[4]:
-
-
 # Worldwide Cases
 
 worldwide_df = df.groupby(['Date']).sum()
@@ -26,10 +19,6 @@ w = worldwide_df.plot(figsize=(8,5))
 w.set_xlabel('Date')
 w.set_ylabel('Number of Cases WorldWide')
 w.title.set_text('Worldwide COVID-19 Cases Trend')
-
-
-# In[34]:
-
 
 us_df = df[df['Country']=='US'].groupby(['Date']).sum()
 
@@ -44,10 +33,6 @@ ax.title.set_text('Worldwide vs United States Total COVID-19 Cases')
 
 plt.legend(loc='upper left')
 plt.show()
-
-
-# In[84]:
-
 
 # United States Daily Cases and Deaths
 
@@ -66,10 +51,6 @@ ax.title.set_text('United States Daily COVID-19 Cases and Deaths')
 plt.legend(loc='upper left')
 plt.show()
 
-
-# In[90]:
-
-
 from datetime import date, timedelta
 yesterday = date.today() - timedelta(days=1)
 yesterday.strftime('%Y-%m-%d')
@@ -87,21 +68,6 @@ ax.title.set_text('Hardest Hit COVID-19 Countries Worldwide')
 
 plt.legend(loc='upper left')
 plt.show()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
